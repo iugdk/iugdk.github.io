@@ -1,365 +1,362 @@
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>http://iug.cartogram.dk/IUG_WEBGIS_v2/test2.html</title><link rel="stylesheet" type="text/css" href="WEBGIS_v2_test2-filer/viewsource.css"></head><body id="viewsource" class="highlight" style="-moz-tab-size: 4" contextmenu="actions"><pre id="line1"><span></span><span class="doctype">&lt;!DOCTYPE html&gt;</span><span>
-<span id="line2"></span></span><span>&lt;<span class="start-tag">html</span>&gt;</span><span>
-<span id="line3"></span></span><span>&lt;<span class="start-tag">head</span>&gt;</span><span>
-<span id="line4"></span>
-<span id="line5"></span>	</span><span>&lt;<span class="start-tag">title</span>&gt;</span><span>Quick Start - Leaflet</span><span>&lt;/<span class="end-tag">title</span>&gt;</span><span>
-<span id="line6"></span>
-<span id="line7"></span>	</span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">charset</span>="<a class="attribute-value">utf-8</a>" <span>/</span>&gt;</span><span>
-<span id="line8"></span>	</span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">viewport</a>" <span class="attribute-name">content</span>="<a class="attribute-value">width=device-width, initial-scale=1.0</a>"&gt;</span><span>
-<span id="line9"></span>
-<span id="line10"></span>	</span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">shortcut icon</a>" <span class="attribute-name">type</span>="<a class="attribute-value">image/x-icon</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://iug.cartogram.dk/IUG_WEBGIS_v2/docs/images/favicon.ico">docs/images/favicon.ico</a>" <span>/</span>&gt;</span><span>
-<span id="line11"></span>
-<span id="line12"></span>	</span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">stylesheet</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://iug.cartogram.dk/IUG_WEBGIS_v2/Leaflet/leaflet.css">./Leaflet/leaflet.css</a>" <span>/</span>&gt;</span><span>
-<span id="line13"></span>	</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:http://iug.cartogram.dk/IUG_WEBGIS_v2/Leaflet/leaflet.js">./Leaflet/leaflet.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line14"></span>
-<span id="line15"></span>	</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:http://iug.cartogram.dk/IUG_WEBGIS_v2/jquery_3.1.1/jquery-3.1.1.min.js">./jquery_3.1.1/jquery-3.1.1.min.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line16"></span>
-<span id="line17"></span>	</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://iug.cartogram.dk/IUG_WEBGIS_v2/Leaflet.markercluster-1.0.0/dist/leaflet.markercluster-src.js">./Leaflet.markercluster-1.0.0/dist/leaflet.markercluster-src.js</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line18"></span>	</span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://iug.cartogram.dk/IUG_WEBGIS_v2/Leaflet.markercluster-1.0.0/dist/MarkerCluster.css">./Leaflet.markercluster-1.0.0/dist/MarkerCluster.css</a>' <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span>/</span>&gt;</span><span>
-<span id="line19"></span>	</span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://iug.cartogram.dk/IUG_WEBGIS_v2/Leaflet.markercluster-1.0.0/dist/MarkerCluster.Default.css">./Leaflet.markercluster-1.0.0/dist/MarkerCluster.Default.css</a>' <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span>/</span>&gt;</span><span>
-<span id="line20"></span>
-<span id="line21"></span>
-<span id="line22"></span>	</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js">https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line23"></span>	</span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css">https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css</a>' <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span>/</span>&gt;</span><span>
-<span id="line24"></span>
-<span id="line25"></span>
-<span id="line26"></span>	</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://iug.cartogram.dk/IUG_WEBGIS_v2/Button/easy-button.js">./Button/easy-button.js</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line27"></span>	</span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://iug.cartogram.dk/IUG_WEBGIS_v2/Button/easy-button.css">./Button/easy-button.css</a>' <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span>/</span>&gt;</span><span>
-<span id="line28"></span>
-<span id="line29"></span></span><span>&lt;/<span class="end-tag">head</span>&gt;</span><span>
-<span id="line30"></span>
-<span id="line31"></span></span><span>&lt;<span class="start-tag">body</span>&gt;</span><span>
-<span id="line32"></span>
-<span id="line33"></span>
-<span id="line34"></span>
-<span id="line35"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">mapid</a>" <span class="attribute-name">style</span>="<a class="attribute-value">width: 700px; height: 450px;</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
-<span id="line36"></span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
-<span id="line37"></span>/* eslint-disable */
-<span id="line38"></span>var map = L.map('mapid').setView([50.370, -4.14], 3);
-<span id="line39"></span>map.addControl(new L.Control.Fullscreen({
-<span id="line40"></span>  position: 'topleft', // change the position of the button can be topleft, topright, bottomright or bottomleft, defaut topleft
-<span id="line41"></span>  title: 'Show me the fullscreen !', // change the title of the button, default Full Screen
-<span id="line42"></span>  titleCancel: 'Exit fullscreen mode', // change the title of the button when fullscreen is on, default Exit Full Screen
-<span id="line43"></span>  content: null, // change the content of the button, can be HTML, default null
-<span id="line44"></span>  forceSeparateButton: true, // force seperate button to detach from zoom buttons, default false
-<span id="line45"></span>  forcePseudoFullscreen: true, // force use of pseudo full screen even if full screen API is available, default false
-<span id="line46"></span>  fullscreenElement: false // Dom element to render in full screen, false by default, fallback to map._container
-<span id="line47"></span>}));
-<span id="line48"></span>
-<span id="line49"></span>var basemap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-<span id="line50"></span>    maxZoom: 18,
-<span id="line51"></span>    attribution: '&amp;copy; </span><span>&lt;a</span><span> href="http://IUG.dk"&gt;Engineers Without Borders, OpenStreetMap Contributors</span><span>&lt;/<span></span>a</span><span>&gt;'
-<span id="line52"></span>}).addTo(map);
-<span id="line53"></span>
-<span id="line54"></span>var owsrootUrl = 'http://88.99.35.158:8080/geoserver/IUG_MAP/ows';
-<span id="line55"></span>
-<span id="line56"></span>var defaultParameters = {
-<span id="line57"></span>    service : 'WFS',
-<span id="line58"></span>    version : '2.0',
-<span id="line59"></span>    request : 'GetFeature',
-<span id="line60"></span>    typeName : 'IUG_MAP:Projects',
-<span id="line61"></span>    outputFormat : 'text/javascript',
-<span id="line62"></span>    format_options : 'callback:getJson',
-<span id="line63"></span>    SrsName : 'EPSG:4326'
-<span id="line64"></span>};
-<span id="line65"></span>
-<span id="line66"></span>var parameters = L.Util.extend(defaultParameters);
-<span id="line67"></span>var URL = owsrootUrl + L.Util.getParamString(parameters);
-<span id="line68"></span>
-<span id="line69"></span>var markersEnviron = L.markerClusterGroup({
-<span id="line70"></span>	iconCreateFunction: function(cluster) {
-<span id="line71"></span>	var childCount = cluster.getChildCount();
-<span id="line72"></span>		return L.divIcon({className: 'Environicon clusterIcons', html: '</span><span>&lt;d</span><span>iv&gt;</span><span>&lt;s</span><span>pan&gt;' + childCount + '</span><span>&lt;/<span>s</span>p</span><span>an&gt;</span><span>&lt;/<span></span>d</span><span>iv&gt;'});
-<span id="line73"></span>	},
-<span id="line74"></span>	polygonOptions: {
-<span id="line75"></span>	opacity: 0,
-<span id="line76"></span>	fillOpacity: 0
-<span id="line77"></span>	}
-<span id="line78"></span>});
-<span id="line79"></span>
-<span id="line80"></span>var markersWASH = L.markerClusterGroup({
-<span id="line81"></span>	iconCreateFunction: function(cluster) {
-<span id="line82"></span>	var childCount = cluster.getChildCount();
-<span id="line83"></span>		return L.divIcon({className: 'Washicon clusterIcons', html: '</span><span>&lt;d</span><span>iv&gt;</span><span>&lt;s</span><span>pan&gt;' + childCount + '</span><span>&lt;/<span>s</span>p</span><span>an&gt;</span><span>&lt;/<span></span>d</span><span>iv&gt;'});
-<span id="line84"></span>	},
-<span id="line85"></span>	polygonOptions: {
-<span id="line86"></span>	opacity: 0,
-<span id="line87"></span>	fillOpacity: 0
-<span id="line88"></span>	}
-<span id="line89"></span>});
-<span id="line90"></span>
-<span id="line91"></span>var markersTechnical = L.markerClusterGroup({
-<span id="line92"></span>	iconCreateFunction: function(cluster) {
-<span id="line93"></span>	var childCount = cluster.getChildCount();
-<span id="line94"></span>		return L.divIcon({className: 'Technicalicon clusterIcons', html: '</span><span>&lt;d</span><span>iv&gt;</span><span>&lt;s</span><span>pan&gt;' + childCount + '</span><span>&lt;/<span>s</span>p</span><span>an&gt;</span><span>&lt;/<span></span>d</span><span>iv&gt;'});
-<span id="line95"></span>	},
-<span id="line96"></span>	polygonOptions: {
-<span id="line97"></span>	opacity: 0,
-<span id="line98"></span>	fillOpacity: 0
-<span id="line99"></span>	}
-<span id="line100"></span>});
-<span id="line101"></span>
-<span id="line102"></span>var markersBuilding = L.markerClusterGroup({
-<span id="line103"></span>	iconCreateFunction: function(cluster) {
-<span id="line104"></span>	var childCount = cluster.getChildCount();
-<span id="line105"></span>		return L.divIcon({className: 'Buildingicon clusterIcons', html: '</span><span>&lt;d</span><span>iv&gt;</span><span>&lt;s</span><span>pan&gt;' + childCount + '</span><span>&lt;/<span>s</span>p</span><span>an&gt;</span><span>&lt;/<span></span>d</span><span>iv&gt;'});
-<span id="line106"></span>	},
-<span id="line107"></span>	polygonOptions: {
-<span id="line108"></span>	opacity: 0,
-<span id="line109"></span>	fillOpacity: 0
-<span id="line110"></span>	}
-<span id="line111"></span>});
-<span id="line112"></span>
-<span id="line113"></span>var WFSLayer = null;
-<span id="line114"></span>
-<span id="line115"></span>var icons = {
-<span id="line116"></span>  wash: L.icon({
-<span id="line117"></span>      iconUrl: 'https://ewbdk.org/graphics/logo/H300.png',
-<span id="line118"></span>      iconSize: [32, 32],
-<span id="line119"></span>      iconAnchor: [22, 36],
-<span id="line120"></span>      popupAnchor: [-3, -36],
-<span id="line121"></span>  }),
-<span id="line122"></span>  environ: L.icon({
-<span id="line123"></span>      iconUrl: 'https://ewbdk.org/graphics/logo/E300.png',
-<span id="line124"></span>      iconSize: [32, 32],
-<span id="line125"></span>      iconAnchor: [22, 36],
-<span id="line126"></span>      popupAnchor: [-3, -36],
-<span id="line127"></span>  }),
-<span id="line128"></span>  building: L.icon({
-<span id="line129"></span>      iconUrl: 'https://ewbdk.org/graphics/logo/A300.png',
-<span id="line130"></span>      iconSize: [32, 32],
-<span id="line131"></span>      iconAnchor: [22, 36],
-<span id="line132"></span>      popupAnchor: [-3, -36],
-<span id="line133"></span>  }),
-<span id="line134"></span>  technical: L.icon({
-<span id="line135"></span>      iconUrl: 'https://ewbdk.org/graphics/logo/W300.png',
-<span id="line136"></span>      iconSize: [32, 32],
-<span id="line137"></span>      iconAnchor: [22, 36],
-<span id="line138"></span>      popupAnchor: [-3, -36],
-<span id="line139"></span>  })
-<span id="line140"></span>}
-<span id="line141"></span>
-<span id="line142"></span>var ajaxWASH = $.ajax({
-<span id="line143"></span>    url : URL,
-<span id="line144"></span>    dataType : 'jsonp',
-<span id="line145"></span>    jsonpCallback : 'getJson',
-<span id="line146"></span>    success: function(data) {
-<span id="line147"></span>    var TECHNICALJSON = L.geoJSON(data, {
-<span id="line148"></span>        filter: TechnicalFilter,
-<span id="line149"></span>        pointToLayer: function (feature, latlng) {
-<span id="line150"></span>            return L.marker(latlng, {icon: icons.technical}).on('click', function (layer) {
-<span id="line151"></span>              var props = layer.target.feature.properties
-<span id="line152"></span>              var popup = L.popup()
-<span id="line153"></span>                .setLatLng(latlng)
-<span id="line154"></span>                .setContent(`
-<span id="line155"></span>                  </span><span>&lt;t</span><span>able&gt;
-<span id="line156"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Project</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.ProjectName}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line157"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Kategori</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.Category}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line158"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Land</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.Country}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line159"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Projectleder</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.IUGProjectManager}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line160"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Partner</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.ProjectPartnerOrganisation}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line161"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Link</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;</span><span>&lt;a</span><span> href="${props.link}" target="_blank"&gt;link</span><span>&lt;/<span></span>a</span><span>&gt;</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line162"></span>                  </span><span>&lt;/<span></span>t</span><span>able&gt;
-<span id="line163"></span>                  </span><span>&lt;d</span><span>iv class="imgContainer"&gt;</span><span>&lt;i</span><span>mg class="projectImage" src="http://iug.dk/templates/IUG_Template/images/top_logo01.gif"/&gt;</span><span>&lt;/<span></span>d</span><span>iv&gt;
-<span id="line164"></span>                  `)
-<span id="line165"></span>                .openOn(map);
-<span id="line166"></span>            })
-<span id="line167"></span>        }
-<span id="line168"></span>    });
-<span id="line169"></span>    var BUILDINGJSON = L.geoJSON(data, {
-<span id="line170"></span>        filter: BuildingFilter,
-<span id="line171"></span>        pointToLayer: function (feature, latlng) {
-<span id="line172"></span>            return L.marker(latlng, {icon: icons.building}).on('click', function (layer) {
-<span id="line173"></span>              var props = layer.target.feature.properties
-<span id="line174"></span>              var popup = L.popup()
-<span id="line175"></span>                .setLatLng(latlng)
-<span id="line176"></span>                .setContent(`
-<span id="line177"></span>                  </span><span>&lt;t</span><span>able&gt;
-<span id="line178"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Project</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.ProjectName}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line179"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Kategori</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.Category}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line180"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Land</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.Country}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line181"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Projectleder</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.IUGProjectManager}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line182"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Partner</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.ProjectPartnerOrganisation}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line183"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Link</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;</span><span>&lt;a</span><span> href="${props.link}" target="_blank"&gt;link</span><span>&lt;/<span></span>a</span><span>&gt;</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line184"></span>                  </span><span>&lt;/<span></span>t</span><span>able&gt;
-<span id="line185"></span>                  </span><span>&lt;d</span><span>iv class="imgContainer"&gt;</span><span>&lt;i</span><span>mg class="projectImage" src="http://iug.dk/templates/IUG_Template/images/top_logo01.gif"/&gt;</span><span>&lt;/<span></span>d</span><span>iv&gt;
-<span id="line186"></span>                  `)
-<span id="line187"></span>                .openOn(map);
-<span id="line188"></span>            })
-<span id="line189"></span>        }
-<span id="line190"></span>    });
-<span id="line191"></span>    var ENVIRONJSON = L.geoJSON(data, {
-<span id="line192"></span>        filter: EnvironFilter,
-<span id="line193"></span>        pointToLayer: function (feature, latlng) {
-<span id="line194"></span>            return L.marker(latlng, {icon: icons.environ}).on('click', function (layer) {
-<span id="line195"></span>              var props = layer.target.feature.properties
-<span id="line196"></span>              var popup = L.popup()
-<span id="line197"></span>                .setLatLng(latlng)
-<span id="line198"></span>                .setContent(`
-<span id="line199"></span>                  </span><span>&lt;t</span><span>able&gt;
-<span id="line200"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Project</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.ProjectName}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line201"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Kategori</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.Category}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line202"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Land</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.Country}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line203"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Projectleder</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.IUGProjectManager}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line204"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Partner</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.ProjectPartnerOrganisation}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line205"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Link</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;</span><span>&lt;a</span><span> href="${props.link}" target="_blank"&gt;link</span><span>&lt;/<span></span>a</span><span>&gt;</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line206"></span>                  </span><span>&lt;/<span></span>t</span><span>able&gt;
-<span id="line207"></span>                  </span><span>&lt;d</span><span>iv class="imgContainer"&gt;</span><span>&lt;i</span><span>mg class="projectImage" src="http://iug.dk/templates/IUG_Template/images/top_logo01.gif"/&gt;</span><span>&lt;/<span></span>d</span><span>iv&gt;
-<span id="line208"></span>                  `)
-<span id="line209"></span>                .openOn(map);
-<span id="line210"></span>            })
-<span id="line211"></span>        }
-<span id="line212"></span>    });
-<span id="line213"></span>    var WASHJSON = L.geoJSON(data, {
-<span id="line214"></span>        filter: WASHFilter,
-<span id="line215"></span>        pointToLayer: function (feature, latlng) {
-<span id="line216"></span>            return L.marker(latlng, {icon: icons.wash}).on('click', function (layer) {
-<span id="line217"></span>              var props = layer.target.feature.properties
-<span id="line218"></span>              var popup = L.popup()
-<span id="line219"></span>                .setLatLng(latlng)
-<span id="line220"></span>                .setContent(`
-<span id="line221"></span>                  </span><span>&lt;t</span><span>able&gt;
-<span id="line222"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Project</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.ProjectName}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line223"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Kategori</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.Category}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line224"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Land</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.Country}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line225"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Projectleder</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.IUGProjectManager}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line226"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Partner</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;${props.ProjectPartnerOrganisation}</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line227"></span>                    </span><span>&lt;t</span><span>r&gt;</span><span>&lt;t</span><span>d class="tableTitle"&gt;Link</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;t</span><span>d class="tableText"&gt;</span><span>&lt;a</span><span> href="${props.link}" target="_blank"&gt;link</span><span>&lt;/<span></span>a</span><span>&gt;</span><span>&lt;/<span></span>t</span><span>d&gt;</span><span>&lt;/<span></span>t</span><span>r&gt;
-<span id="line228"></span>                  </span><span>&lt;/<span></span>t</span><span>able&gt;
-<span id="line229"></span>                  </span><span>&lt;d</span><span>iv class="imgContainer"&gt;</span><span>&lt;i</span><span>mg class="projectImage" src="http://iug.dk/templates/IUG_Template/images/top_logo01.gif"/&gt;</span><span>&lt;/<span></span>d</span><span>iv&gt;
-<span id="line230"></span>                  `)
-<span id="line231"></span>                .openOn(map);
-<span id="line232"></span>            })
-<span id="line233"></span>        }
-<span id="line234"></span>    });
-<span id="line235"></span>
-<span id="line236"></span>
-<span id="line237"></span>		//add layers
-<span id="line238"></span>		markersWASH.addLayer(WASHJSON)
-<span id="line239"></span>		//map.addLayer(markersWASH);
-<span id="line240"></span>		markersTechnical.addLayer(TECHNICALJSON);
-<span id="line241"></span>		//map.addLayer(markersTechnical);
-<span id="line242"></span>		markersBuilding.addLayer(BUILDINGJSON);
-<span id="line243"></span>		//map.addLayer(markersBuilding);
-<span id="line244"></span>		markersEnviron.addLayer(ENVIRONJSON);
-<span id="line245"></span>		//map.addLayer(markersEnviron);
-<span id="line246"></span>
-<span id="line247"></span>		//button test
-<span id="line248"></span>
-<span id="line249"></span>
-<span id="line250"></span>		function WASHFilter(feature) {
-<span id="line251"></span>  if (feature.properties.Category === "Water and Sanitation") return true
-<span id="line252"></span>}
-<span id="line253"></span>		function TechnicalFilter(feature) {
-<span id="line254"></span>  if (feature.properties.Category === "Technical Assistance") return true
-<span id="line255"></span>}
-<span id="line256"></span>		function BuildingFilter(feature) {
-<span id="line257"></span>  if (feature.properties.Category === "Building") return true
-<span id="line258"></span>}
-<span id="line259"></span>		function EnvironFilter(feature) {
-<span id="line260"></span>  if (feature.properties.Category === "Environment") return true
-<span id="line261"></span>}
-<span id="line262"></span>
-<span id="line263"></span>
-<span id="line264"></span>var buttons = {
-<span id="line265"></span>  environ: L.easyButton({
-<span id="line266"></span>  	position: 'topright',
-<span id="line267"></span>    states: [{
-<span id="line268"></span>      stateName: 'add-markers',
-<span id="line269"></span>      icon: '</span><span>&lt;i</span><span>mg alt="do this" src="https://ewbdk.org/graphics/logo/E300.png" height="40" width="40" align="middle" style="opacity:0.4"/&gt;',
-<span id="line270"></span>      title: 'add random markers',
-<span id="line271"></span>      onClick: function(control) {
-<span id="line272"></span>        map.addLayer(markersEnviron);
-<span id="line273"></span>        control.state('remove-markers');
-<span id="line274"></span>      }
-<span id="line275"></span>    }, {
-<span id="line276"></span>      icon: '</span><span>&lt;i</span><span>mg alt="do this" src="https://ewbdk.org/graphics/logo/E300.png" height="40" width="40" align="middle"/&gt;',
-<span id="line277"></span>      stateName: 'remove-markers',
-<span id="line278"></span>      onClick: function(control) {
-<span id="line279"></span>        map.removeLayer(markersEnviron);
-<span id="line280"></span>        control.state('add-markers');
-<span id="line281"></span>      },
-<span id="line282"></span>      title: 'remove markers'
-<span id="line283"></span>    }]
-<span id="line284"></span>  }),
-<span id="line285"></span>  building: L.easyButton({
-<span id="line286"></span>  	position: 'topright',
-<span id="line287"></span>    states: [{
-<span id="line288"></span>      stateName: 'add-markers',
-<span id="line289"></span>      icon: '</span><span>&lt;i</span><span>mg alt="do this" src="https://ewbdk.org/graphics/logo/A300.png" height="40" width="40" align="middle" style="opacity:0.4"/&gt;',
-<span id="line290"></span>      title: 'add random markers',
-<span id="line291"></span>      onClick: function(control) {
-<span id="line292"></span>        map.addLayer(markersBuilding);
-<span id="line293"></span>        control.state('remove-markers');
-<span id="line294"></span>      }
-<span id="line295"></span>    }, {
-<span id="line296"></span>      icon: '</span><span>&lt;i</span><span>mg alt="do this" src="https://ewbdk.org/graphics/logo/A300.png" height="40" width="40" align="middle"/&gt;',
-<span id="line297"></span>      stateName: 'remove-markers',
-<span id="line298"></span>      onClick: function(control) {
-<span id="line299"></span>        map.removeLayer(markersBuilding);
-<span id="line300"></span>        control.state('add-markers');
-<span id="line301"></span>      },
-<span id="line302"></span>      title: 'remove markers'
-<span id="line303"></span>    }]
-<span id="line304"></span>  }),
-<span id="line305"></span>  wash: L.easyButton({
-<span id="line306"></span>  	position: 'topright',
-<span id="line307"></span>    states: [{
-<span id="line308"></span>      stateName: 'add-markers',
-<span id="line309"></span>      icon: '</span><span>&lt;i</span><span>mg alt="do this" src="https://ewbdk.org/graphics/logo/H300.png" height="40" width="40" align="middle" style="opacity:0.4"/&gt;',
-<span id="line310"></span>      title: 'add random markers',
-<span id="line311"></span>      onClick: function(control) {
-<span id="line312"></span>        map.addLayer(markersWASH);
-<span id="line313"></span>        control.state('remove-markers');
-<span id="line314"></span>      }
-<span id="line315"></span>    }, {
-<span id="line316"></span>      icon: '</span><span>&lt;i</span><span>mg alt="do this" src="https://ewbdk.org/graphics/logo/H300.png" height="40" width="40" align="middle"/&gt;',
-<span id="line317"></span>      stateName: 'remove-markers',
-<span id="line318"></span>      onClick: function(control) {
-<span id="line319"></span>        map.removeLayer(markersWASH);
-<span id="line320"></span>        control.state('add-markers');
-<span id="line321"></span>      },
-<span id="line322"></span>      title: 'remove markers'
-<span id="line323"></span>    }]
-<span id="line324"></span>  }),
-<span id="line325"></span>  technical: L.easyButton({
-<span id="line326"></span>  	position: 'topright',
-<span id="line327"></span>    states: [{
-<span id="line328"></span>      stateName: 'add-markers',
-<span id="line329"></span>      icon: '</span><span>&lt;i</span><span>mg alt="do this" src="https://ewbdk.org/graphics/logo/W300.png" height="40" width="40" align="middle" style="opacity:0.4"/&gt;',
-<span id="line330"></span>      title: 'add random markers',
-<span id="line331"></span>      onClick: function(control) {
-<span id="line332"></span>        map.addLayer(markersTechnical);
-<span id="line333"></span>        control.state('remove-markers');
-<span id="line334"></span>      }
-<span id="line335"></span>    }, {
-<span id="line336"></span>      icon: '</span><span>&lt;i</span><span>mg alt="do this" src="https://ewbdk.org/graphics/logo/W300.png" height="40" width="40" align="middle"/&gt;',
-<span id="line337"></span>      stateName: 'remove-markers',
-<span id="line338"></span>      onClick: function(control) {
-<span id="line339"></span>        map.removeLayer(markersTechnical);
-<span id="line340"></span>        control.state('add-markers');
-<span id="line341"></span>      },
-<span id="line342"></span>      title: 'remove markers'
-<span id="line343"></span>    }]
-<span id="line344"></span>  })
-<span id="line345"></span>}
-<span id="line346"></span>// add the buttons. iterates over the buttons objects
-<span id="line347"></span>for (var key in buttons) {
-<span id="line348"></span>  if (buttons.hasOwnProperty(key)) {
-<span id="line349"></span>    buttons[key].addTo(map)
-<span id="line350"></span>  }
-<span id="line351"></span>}
-<span id="line352"></span>
-<span id="line353"></span>}});
-<span id="line354"></span>
-<span id="line355"></span>
-<span id="line356"></span>
-<span id="line357"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line358"></span>
-<span id="line359"></span>
-<span id="line360"></span>
-<span id="line361"></span></span><span>&lt;/<span class="end-tag">body</span>&gt;</span><span>
-<span id="line362"></span></span><span>&lt;/<span class="end-tag">html</span>&gt;</span><span>
-<span id="line363"></span></span></pre><menu type="context" id="actions"><menuitem id="goToLine" label="Gå til linje…" accesskey="G"></menuitem><menuitem id="wrapLongLines" label="Ombryd lange linjer" type="checkbox"></menuitem><menuitem id="highlightSyntax" label="Syntaksfremhævning" type="checkbox" checked="true"></menuitem></menu></body></html>
+<html>
+<head>
+
+	<title>Quick Start - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="./Leaflet/leaflet.css" />
+	<script src="./Leaflet/leaflet.js"></script>
+
+	<script src="./jquery_3.1.1/jquery-3.1.1.min.js"></script>
+
+	<script src='./Leaflet.markercluster-1.0.0/dist/leaflet.markercluster-src.js'></script>
+	<link href='./Leaflet.markercluster-1.0.0/dist/MarkerCluster.css' rel='stylesheet' />
+	<link href='./Leaflet.markercluster-1.0.0/dist/MarkerCluster.Default.css' rel='stylesheet' />
+
+
+	<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+
+
+	<script src='./Button/easy-button.js'></script>
+	<link href='./Button/easy-button.css' rel='stylesheet' />
+
+</head>
+
+<body>
+
+
+
+<div id="mapid" style="width: 700px; height: 450px;"></div>
+<script>
+/* eslint-disable */
+var map = L.map('mapid').setView([50.370, -4.14], 3);
+map.addControl(new L.Control.Fullscreen({
+  position: 'topleft', // change the position of the button can be topleft, topright, bottomright or bottomleft, defaut topleft
+  title: 'Show me the fullscreen !', // change the title of the button, default Full Screen
+  titleCancel: 'Exit fullscreen mode', // change the title of the button when fullscreen is on, default Exit Full Screen
+  content: null, // change the content of the button, can be HTML, default null
+  forceSeparateButton: true, // force seperate button to detach from zoom buttons, default false
+  forcePseudoFullscreen: true, // force use of pseudo full screen even if full screen API is available, default false
+  fullscreenElement: false // Dom element to render in full screen, false by default, fallback to map._container
+}));
+
+var basemap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="http://IUG.dk">Engineers Without Borders, OpenStreetMap Contributors</a>'
+}).addTo(map);
+
+var owsrootUrl = 'http://88.99.35.158:8080/geoserver/IUG_MAP/ows';
+
+var defaultParameters = {
+    service : 'WFS',
+    version : '2.0',
+    request : 'GetFeature',
+    typeName : 'IUG_MAP:Projects',
+    outputFormat : 'text/javascript',
+    format_options : 'callback:getJson',
+    SrsName : 'EPSG:4326'
+};
+
+var parameters = L.Util.extend(defaultParameters);
+var URL = owsrootUrl + L.Util.getParamString(parameters);
+
+var markersEnviron = L.markerClusterGroup({
+	iconCreateFunction: function(cluster) {
+	var childCount = cluster.getChildCount();
+		return L.divIcon({className: 'Environicon clusterIcons', html: '<div><span>' + childCount + '</span></div>'});
+	},
+	polygonOptions: {
+	opacity: 0,
+	fillOpacity: 0
+	}
+});
+
+var markersWASH = L.markerClusterGroup({
+	iconCreateFunction: function(cluster) {
+	var childCount = cluster.getChildCount();
+		return L.divIcon({className: 'Washicon clusterIcons', html: '<div><span>' + childCount + '</span></div>'});
+	},
+	polygonOptions: {
+	opacity: 0,
+	fillOpacity: 0
+	}
+});
+
+var markersTechnical = L.markerClusterGroup({
+	iconCreateFunction: function(cluster) {
+	var childCount = cluster.getChildCount();
+		return L.divIcon({className: 'Technicalicon clusterIcons', html: '<div><span>' + childCount + '</span></div>'});
+	},
+	polygonOptions: {
+	opacity: 0,
+	fillOpacity: 0
+	}
+});
+
+var markersBuilding = L.markerClusterGroup({
+	iconCreateFunction: function(cluster) {
+	var childCount = cluster.getChildCount();
+		return L.divIcon({className: 'Buildingicon clusterIcons', html: '<div><span>' + childCount + '</span></div>'});
+	},
+	polygonOptions: {
+	opacity: 0,
+	fillOpacity: 0
+	}
+});
+
+var WFSLayer = null;
+
+var icons = {
+  wash: L.icon({
+      iconUrl: 'https://ewbdk.org/graphics/logo/H300.png',
+      iconSize: [32, 32],
+      iconAnchor: [22, 36],
+      popupAnchor: [-3, -36],
+  }),
+  environ: L.icon({
+      iconUrl: 'https://ewbdk.org/graphics/logo/E300.png',
+      iconSize: [32, 32],
+      iconAnchor: [22, 36],
+      popupAnchor: [-3, -36],
+  }),
+  building: L.icon({
+      iconUrl: 'https://ewbdk.org/graphics/logo/A300.png',
+      iconSize: [32, 32],
+      iconAnchor: [22, 36],
+      popupAnchor: [-3, -36],
+  }),
+  technical: L.icon({
+      iconUrl: 'https://ewbdk.org/graphics/logo/W300.png',
+      iconSize: [32, 32],
+      iconAnchor: [22, 36],
+      popupAnchor: [-3, -36],
+  })
+}
+
+var ajaxWASH = $.ajax({
+    url : URL,
+    dataType : 'jsonp',
+    jsonpCallback : 'getJson',
+    success: function(data) {
+    var TECHNICALJSON = L.geoJSON(data, {
+        filter: TechnicalFilter,
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {icon: icons.technical}).on('click', function (layer) {
+              var props = layer.target.feature.properties
+              var popup = L.popup()
+                .setLatLng(latlng)
+                .setContent(`
+                  <table>
+                    <tr><td class="tableTitle">Project</td><td class="tableText">${props.ProjectName}</td></tr>
+                    <tr><td class="tableTitle">Kategori</td><td class="tableText">${props.Category}</td></tr>
+                    <tr><td class="tableTitle">Land</td><td class="tableText">${props.Country}</td></tr>
+                    <tr><td class="tableTitle">Projectleder</td><td class="tableText">${props.IUGProjectManager}</td></tr>
+                    <tr><td class="tableTitle">Partner</td><td class="tableText">${props.ProjectPartnerOrganisation}</td></tr>
+                    <tr><td class="tableTitle">Link</td><td class="tableText"><a href="${props.link}" target="_blank">link</a></td></tr>
+                  </table>
+                  <div class="imgContainer"><img class="projectImage" src="http://iug.dk/templates/IUG_Template/images/top_logo01.gif"/></div>
+                  `)
+                .openOn(map);
+            })
+        }
+    });
+    var BUILDINGJSON = L.geoJSON(data, {
+        filter: BuildingFilter,
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {icon: icons.building}).on('click', function (layer) {
+              var props = layer.target.feature.properties
+              var popup = L.popup()
+                .setLatLng(latlng)
+                .setContent(`
+                  <table>
+                    <tr><td class="tableTitle">Project</td><td class="tableText">${props.ProjectName}</td></tr>
+                    <tr><td class="tableTitle">Kategori</td><td class="tableText">${props.Category}</td></tr>
+                    <tr><td class="tableTitle">Land</td><td class="tableText">${props.Country}</td></tr>
+                    <tr><td class="tableTitle">Projectleder</td><td class="tableText">${props.IUGProjectManager}</td></tr>
+                    <tr><td class="tableTitle">Partner</td><td class="tableText">${props.ProjectPartnerOrganisation}</td></tr>
+                    <tr><td class="tableTitle">Link</td><td class="tableText"><a href="${props.link}" target="_blank">link</a></td></tr>
+                  </table>
+                  <div class="imgContainer"><img class="projectImage" src="http://iug.dk/templates/IUG_Template/images/top_logo01.gif"/></div>
+                  `)
+                .openOn(map);
+            })
+        }
+    });
+    var ENVIRONJSON = L.geoJSON(data, {
+        filter: EnvironFilter,
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {icon: icons.environ}).on('click', function (layer) {
+              var props = layer.target.feature.properties
+              var popup = L.popup()
+                .setLatLng(latlng)
+                .setContent(`
+                  <table>
+                    <tr><td class="tableTitle">Project</td><td class="tableText">${props.ProjectName}</td></tr>
+                    <tr><td class="tableTitle">Kategori</td><td class="tableText">${props.Category}</td></tr>
+                    <tr><td class="tableTitle">Land</td><td class="tableText">${props.Country}</td></tr>
+                    <tr><td class="tableTitle">Projectleder</td><td class="tableText">${props.IUGProjectManager}</td></tr>
+                    <tr><td class="tableTitle">Partner</td><td class="tableText">${props.ProjectPartnerOrganisation}</td></tr>
+                    <tr><td class="tableTitle">Link</td><td class="tableText"><a href="${props.link}" target="_blank">link</a></td></tr>
+                  </table>
+                  <div class="imgContainer"><img class="projectImage" src="http://iug.dk/templates/IUG_Template/images/top_logo01.gif"/></div>
+                  `)
+                .openOn(map);
+            })
+        }
+    });
+    var WASHJSON = L.geoJSON(data, {
+        filter: WASHFilter,
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {icon: icons.wash}).on('click', function (layer) {
+              var props = layer.target.feature.properties
+              var popup = L.popup()
+                .setLatLng(latlng)
+                .setContent(`
+                  <table>
+                    <tr><td class="tableTitle">Project</td><td class="tableText">${props.ProjectName}</td></tr>
+                    <tr><td class="tableTitle">Kategori</td><td class="tableText">${props.Category}</td></tr>
+                    <tr><td class="tableTitle">Land</td><td class="tableText">${props.Country}</td></tr>
+                    <tr><td class="tableTitle">Projectleder</td><td class="tableText">${props.IUGProjectManager}</td></tr>
+                    <tr><td class="tableTitle">Partner</td><td class="tableText">${props.ProjectPartnerOrganisation}</td></tr>
+                    <tr><td class="tableTitle">Link</td><td class="tableText"><a href="${props.link}" target="_blank">link</a></td></tr>
+                  </table>
+                  <div class="imgContainer"><img class="projectImage" src="http://iug.dk/templates/IUG_Template/images/top_logo01.gif"/></div>
+                  `)
+                .openOn(map);
+            })
+        }
+    });
+
+
+		//add layers
+		markersWASH.addLayer(WASHJSON)
+		//map.addLayer(markersWASH);
+		markersTechnical.addLayer(TECHNICALJSON);
+		//map.addLayer(markersTechnical);
+		markersBuilding.addLayer(BUILDINGJSON);
+		//map.addLayer(markersBuilding);
+		markersEnviron.addLayer(ENVIRONJSON);
+		//map.addLayer(markersEnviron);
+
+		//button test
+
+
+		function WASHFilter(feature) {
+  if (feature.properties.Category === "Water and Sanitation") return true
+}
+		function TechnicalFilter(feature) {
+  if (feature.properties.Category === "Technical Assistance") return true
+}
+		function BuildingFilter(feature) {
+  if (feature.properties.Category === "Building") return true
+}
+		function EnvironFilter(feature) {
+  if (feature.properties.Category === "Environment") return true
+}
+
+
+var buttons = {
+  environ: L.easyButton({
+  	position: 'topright',
+    states: [{
+      stateName: 'add-markers',
+      icon: '<img alt="do this" src="https://ewbdk.org/graphics/logo/E300.png" height="40" width="40" align="middle" style="opacity:0.4"/>',
+      title: 'add random markers',
+      onClick: function(control) {
+        map.addLayer(markersEnviron);
+        control.state('remove-markers');
+      }
+    }, {
+      icon: '<img alt="do this" src="https://ewbdk.org/graphics/logo/E300.png" height="40" width="40" align="middle"/>',
+      stateName: 'remove-markers',
+      onClick: function(control) {
+        map.removeLayer(markersEnviron);
+        control.state('add-markers');
+      },
+      title: 'remove markers'
+    }]
+  }),
+  building: L.easyButton({
+  	position: 'topright',
+    states: [{
+      stateName: 'add-markers',
+      icon: '<img alt="do this" src="https://ewbdk.org/graphics/logo/A300.png" height="40" width="40" align="middle" style="opacity:0.4"/>',
+      title: 'add random markers',
+      onClick: function(control) {
+        map.addLayer(markersBuilding);
+        control.state('remove-markers');
+      }
+    }, {
+      icon: '<img alt="do this" src="https://ewbdk.org/graphics/logo/A300.png" height="40" width="40" align="middle"/>',
+      stateName: 'remove-markers',
+      onClick: function(control) {
+        map.removeLayer(markersBuilding);
+        control.state('add-markers');
+      },
+      title: 'remove markers'
+    }]
+  }),
+  wash: L.easyButton({
+  	position: 'topright',
+    states: [{
+      stateName: 'add-markers',
+      icon: '<img alt="do this" src="https://ewbdk.org/graphics/logo/H300.png" height="40" width="40" align="middle" style="opacity:0.4"/>',
+      title: 'add random markers',
+      onClick: function(control) {
+        map.addLayer(markersWASH);
+        control.state('remove-markers');
+      }
+    }, {
+      icon: '<img alt="do this" src="https://ewbdk.org/graphics/logo/H300.png" height="40" width="40" align="middle"/>',
+      stateName: 'remove-markers',
+      onClick: function(control) {
+        map.removeLayer(markersWASH);
+        control.state('add-markers');
+      },
+      title: 'remove markers'
+    }]
+  }),
+  technical: L.easyButton({
+  	position: 'topright',
+    states: [{
+      stateName: 'add-markers',
+      icon: '<img alt="do this" src="https://ewbdk.org/graphics/logo/W300.png" height="40" width="40" align="middle" style="opacity:0.4"/>',
+      title: 'add random markers',
+      onClick: function(control) {
+        map.addLayer(markersTechnical);
+        control.state('remove-markers');
+      }
+    }, {
+      icon: '<img alt="do this" src="https://ewbdk.org/graphics/logo/W300.png" height="40" width="40" align="middle"/>',
+      stateName: 'remove-markers',
+      onClick: function(control) {
+        map.removeLayer(markersTechnical);
+        control.state('add-markers');
+      },
+      title: 'remove markers'
+    }]
+  })
+}
+// add the buttons. iterates over the buttons objects
+for (var key in buttons) {
+  if (buttons.hasOwnProperty(key)) {
+    buttons[key].addTo(map)
+  }
+}
+
+}});
+
+
+
+</script>
+
+
+
+</body>
+</html>
